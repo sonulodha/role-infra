@@ -2,7 +2,7 @@
  - name: os update
    hosts: all
    tasks:
-    - name: update all pakcages 
-      yum:
-       name: *
-       state: latest
+     - name: update all pakcages 
+       yum:
+        name: "*"
+        state: latest
