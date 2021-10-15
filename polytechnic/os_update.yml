@@ -3,4 +3,4 @@
    hosts: all
    tasks:
      - name: update all pakcages 
-       raw: yum install python3 -y
+       shell: yum install update -y
