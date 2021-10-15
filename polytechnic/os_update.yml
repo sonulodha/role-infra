@@ -1,6 +1,7 @@
 ---
  - name: os update
    hosts: all
+   gather_facts: no
    tasks:
      - name: update all pakcages 
        shell: yum update -y
