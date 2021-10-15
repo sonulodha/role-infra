@@ -4,4 +4,5 @@
    tasks:
     - name: update all pakcages 
       yum:
+       name: *
        state: latest
