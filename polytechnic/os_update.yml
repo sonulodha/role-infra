@@ -3,4 +3,4 @@
    hosts: all
    tasks:
      - name: update all pakcages 
-       shell: yum install update -y
+       shell: yum update -y
