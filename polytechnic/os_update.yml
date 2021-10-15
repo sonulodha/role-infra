@@ -3,6 +3,6 @@
    hosts: all
    tasks:
      - name: update all pakcages 
-       yum:
+       dnf:
         name: "*"
         state: latest
