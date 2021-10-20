@@ -6,6 +6,7 @@
    - name: stopped ec2 instances
      ec2_instance:
       state: stopped
+      region: ap-northeast-2
       instance_ids: "{{ item }}"
      with_items:
       - i-055c4fd2aaf3dbc52
