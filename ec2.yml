@@ -1,6 +1,7 @@
 ---
 - name: stop and change ec2 instance type
   hosts: all
+  connection: local
   tasks:
    - name: stopped ec2 instances
      ec2_instance:
