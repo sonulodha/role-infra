@@ -1,0 +1,28 @@
+---
+- name: stop and change ec2 instance type
+  hosts: localhost
+  connection: local
+  tasks:
+   - name: stopped ec2 instances
+     ec2_instance:
+      state: stopped
+      instance_ids: "{{ item }}"
+     loop:
+      - i-055c4fd2aaf3dbc52
+      - i-036ddd0374f646570
+      - i-07b16ed74d1d421bd
+   - name: 
+     shell: aws ec2 modify-instance-attribute  --instance-id "{{ item }}" --instance-type "{\"Value\": \"t3a.small\"}"
+     loop:
+      - i-055c4fd2aaf3dbc52
+      - i-036ddd0374f646570
+      - i-07b16ed74d1d421bd
+      
+   - name: stopped ec2 instances
+     ec2_instance:
+      state: started
+      instance_ids: "{{ item }}"
+     loop:
+      - i-055c4fd2aaf3dbc52
+      - i-036ddd0374f646570
+      - i-07b16ed74d1d421bd   
