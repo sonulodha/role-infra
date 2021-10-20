@@ -14,10 +14,10 @@
    - name: 
      shell: > 
       aws ec2 modify-instance-attribute  --instance-id {{ item }} --instance-type "{\"Value\": \"t3.small\"}"
-     loop:
-      - i-055c4fd2aaf3dbc52
-      - i-036ddd0374f646570
-      - i-07b16ed74d1d421bd
+     with_items:
+      - "{{ i-055c4fd2aaf3dbc52 }}"
+      - "{{ i-036ddd0374f646570 }}"
+      - "{{ i-07b16ed74d1d421bd }}"
       
    - name: stopped ec2 instances
      ec2_instance:
